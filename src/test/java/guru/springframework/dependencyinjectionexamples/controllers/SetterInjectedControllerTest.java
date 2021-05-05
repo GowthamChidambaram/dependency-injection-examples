@@ -1,6 +1,6 @@
 package guru.springframework.dependencyinjectionexamples.controllers;
 
-import guru.springframework.dependencyinjectionexamples.services.GreetingServiceImpl;
+import guru.springframework.dependencyinjectionexamples.services.SetterGreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,7 @@ class SetterInjectedControllerTest {
   void setUp() {
 
     setterInjectedController = new SetterInjectedController();
-    setterInjectedController.setGreetingService(new GreetingServiceImpl());
+    setterInjectedController.setGreetingService(new SetterGreetingServiceImpl());
   }
 
   @Test
