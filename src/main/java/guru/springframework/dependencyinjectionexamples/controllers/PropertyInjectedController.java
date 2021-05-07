@@ -15,7 +15,7 @@ public class PropertyInjectedController {
   @Autowired
   public GreetingService greetingService;
 
-  public String sayGreeting(){
+  public String sayHello(){
     return greetingService.sayGreeting();
   }
 }

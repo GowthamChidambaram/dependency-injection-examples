@@ -19,7 +19,7 @@ public class SetterInjectedController {
     this.greetingService = greetingService;
   }
 
-  public String sayGreeting(){
+  public String sayHello(){
     return greetingService.sayGreeting();
   }
 

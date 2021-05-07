@@ -23,6 +23,6 @@ class SetterInjectedControllerTest {
   @Test
   void sayGreeting() {
 
-    System.out.println(setterInjectedController.sayGreeting());
+    System.out.println(setterInjectedController.sayHello());
   }
 }
