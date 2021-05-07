@@ -14,11 +14,12 @@ public class DependencyInjectionExamplesApplication {
 
     ApplicationContext applicationContext = SpringApplication.run(DependencyInjectionExamplesApplication.class, args);
 
-    System.out.println("--------Profile EN---------");
+    System.out.println("--------Profile---------");
     I18nController i18nController = (I18nController) applicationContext.getBean("i18nController");
     System.out.println(i18nController.sayHello());
 
 
+    System.out.println("--------Primary Bean---------");
     MyController myController = (MyController) applicationContext.getBean("myController");
     String greetings = myController.sayHello();
     System.out.println(greetings);
