@@ -1,5 +1,6 @@
 package guru.springframework.dependencyinjectionexamples.services;
 
+import guru.springframework.dependencyinjectionexamples.repositories.EnglishGreetingRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +11,16 @@ import org.springframework.stereotype.Service;
 @Service("i18nService")
 public class I18nEnglishGreetingServiceImpl implements GreetingService {
 
+  private final EnglishGreetingRepository englishGreetingRepository;
+
+  public I18nEnglishGreetingServiceImpl(EnglishGreetingRepository englishGreetingRepository) {
+    this.englishGreetingRepository = englishGreetingRepository;
+  }
+
+
+
   @Override
-  public String sayGreeting() {
-    return "hello world ---- EN";
+  public String sayGreeting(){
+    return englishGreetingRepository.getGreeting();
   }
 }
