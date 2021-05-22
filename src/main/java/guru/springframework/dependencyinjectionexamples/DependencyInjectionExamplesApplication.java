@@ -3,6 +3,7 @@ package guru.springframework.dependencyinjectionexamples;
 import com.sun.org.apache.xml.internal.security.utils.I18n;
 import com.sun.tools.internal.jxc.ap.Const;
 import guru.springframework.dependencyinjectionexamples.controllers.*;
+import guru.springframework.dependencyinjectionexamples.datasource.FakeDataSource;
 import guru.springframework.dependencyinjectionexamples.services.PrototypeBean;
 import guru.springframework.dependencyinjectionexamples.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -51,6 +52,14 @@ public class DependencyInjectionExamplesApplication {
     System.out.println(prototypeBean1.getScope());
     PrototypeBean prototypeBean2  = applicationContext.getBean(PrototypeBean.class);
     System.out.println(prototypeBean2.getScope());
+
+    System.out.println("--------Datasource properties---------");
+    FakeDataSource fakeDataSource = applicationContext.getBean(FakeDataSource.class);
+    System.out.println(fakeDataSource.getJdbcurl());
+    System.out.println(fakeDataSource.getPassword());
+    System.out.println(fakeDataSource.getUsername());
+
+
 
 
   }
